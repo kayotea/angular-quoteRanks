@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+  <head></head>
+  <body>
+    {{quoteArr | json}}
+    {{arrLength}}
+    <app-add-quote (formSubmission)="invokeAddQuote($event)"></app-add-quote>
+    <app-list 
+    [allQuotes]="quoteArr" 
+    (addVote)="addVote($event)"
+    (subVote)="subVote($event)"
+    (delQuote)="delQuote($event)"></app-list>
+  </body>
+</html>

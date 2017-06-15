@@ -1,0 +1,16 @@
+<p>AddQuoteComponent</p>
+<h3>Add a Quote</h3>
+{{newquote | json}}
+<form (submit)="onSubmit()" #quoteform="ngForm">
+  <textarea name="text" rows="4" cols="50"
+    required 
+    [(ngModel)]="newquote.text">
+    </textarea>
+    <p *ngIf="!newquote?.text" class="error">Quote Required</p>
+    <p *ngIf="!newquote?.author" class="error">Author Required</p>
+    <br>
+  Author: <input type="text" name="author"
+  required
+  [(ngModel)]="newquote.author">
+  <input type="submit" value="Add Quote" [disabled]="!quoteform.form.valid">
+</form>

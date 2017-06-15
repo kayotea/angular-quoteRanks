@@ -1,0 +1,10 @@
+<p>ListComponent</p>
+<h3>Quotes List</h3>
+<div *ngFor="let quote of allQuotes">
+    <p>"{{quote.text}}"</p>
+    <p>~ {{quote.author}}</p>
+    <p>Votes: {{quote.votes}}</p>
+    <button class="green" (click)="upVote(quote)">Vote Up</button>
+    <button class="pink" (click)="downVote(quote)">Vote Down</button>
+    <button class="grey" (click)="deleteQuote(quote)">Delete</button>
+</div>
